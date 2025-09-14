@@ -1,0 +1,427 @@
+/* ===== GOD-LEVEL ANIMATION STYLES ===== */
+
+/* Scroll animations */
+.animate-in {
+    animation: godSlideIn 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+
+/* Enhanced Movie card animations */
+.movie-card {
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.2));
+    border-radius: 20px;
+    border: 2px solid transparent;
+    backdrop-filter: blur(10px);
+    cursor: pointer;
+}
+
+.movie-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+    z-index: 1;
+}
+
+.movie-card:hover::before {
+    left: 100%;
+}
+
+.movie-card:hover {
+    transform: translateY(-15px) rotateY(8deg) scale(1.05);
+    box-shadow: 
+        0 25px 60px rgba(0, 0, 0, 0.4),
+        0 0 80px rgba(255, 107, 107, 0.6),
+        0 0 120px rgba(78, 205, 196, 0.4);
+    border: 2px solid rgba(255, 215, 0, 0.8);
+    animation: cardMagic 0.8s ease;
+}
+
+@keyframes cardMagic {
+    0% { filter: hue-rotate(0deg) brightness(1); }
+    25% { filter: hue-rotate(90deg) brightness(1.2); }
+    50% { filter: hue-rotate(180deg) brightness(0.9); }
+    75% { filter: hue-rotate(270deg) brightness(1.1); }
+    100% { filter: hue-rotate(360deg) brightness(1); }
+}
+
+/* Enhanced Button animations */
+.btn-primary, .btn-secondary, .watch-btn {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    background: linear-gradient(45deg, #ff6b6b, #ffd700, #4ecdc4);
+    background-size: 300% 300%;
+    animation: buttonGradient 3s ease infinite;
+    border: none;
+    border-radius: 25px;
+    padding: 12px 24px;
+    font-weight: 600;
+    color: #000;
+    cursor: pointer;
+    box-shadow: 0 8px 25px rgba(255, 107, 107, 0.3);
+}
+
+.watch-btn {
+    background: linear-gradient(45deg, #ff0080, #ff8c00, #00ff80);
+    animation: watchButtonPulse 2s ease-in-out infinite;
+    transform: scale(1);
+}
+
+.btn-primary::after, .btn-secondary::after, .watch-btn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.8), transparent);
+    transition: all 0.5s ease;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.btn-primary:hover, .btn-secondary:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 15px 40px rgba(255, 107, 107, 0.6);
+    animation: buttonExplode 0.6s ease;
+}
+
+.watch-btn:hover {
+    transform: translateY(-8px) scale(1.1);
+    box-shadow: 0 20px 50px rgba(255, 0, 128, 0.8);
+    animation: watchButtonExplode 0.8s ease;
+}
+
+.btn-primary:hover::after, .btn-secondary:hover::after, .watch-btn:hover::after {
+    width: 400px;
+    height: 400px;
+}
+
+/* Navbar animations */
+.navbar {
+    backdrop-filter: blur(20px);
+    transition: all 0.3s ease;
+}
+
+.nav-link {
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.nav-link::before {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(45deg, #8a2be2, #4b0082);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-link:hover::before, .nav-link.active::before {
+    width: 100%;
+}
+
+.nav-link:hover {
+    transform: translateY(-2px);
+    text-shadow: 0 0 10px rgba(138, 43, 226, 0.8);
+}
+
+/* Hero section animations */
+.hero-title {
+    animation: godTitleReveal 2s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+.hero-subtitle {
+    animation: godSubtitleReveal 2s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.5s forwards;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.hero-buttons {
+    animation: godButtonsReveal 2s cubic-bezier(0.68, -0.55, 0.265, 1.55) 1s forwards;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+/* Section title animations */
+.section-title {
+    position: relative;
+    overflow: hidden;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(45deg, #8a2be2, #4b0082, #9370db);
+    transform: translateX(-100%);
+    animation: titleUnderline 1s ease-out 0.5s forwards;
+}
+
+/* Loading screen animations */
+.loading-screen {
+    background: linear-gradient(45deg, #000, #1a1a2e, #16213e, #0f0f23);
+    background-size: 400% 400%;
+    animation: gradientShift 3s ease-in-out infinite;
+}
+
+.loader {
+    position: relative;
+}
+
+.loader::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    right: -20px;
+    bottom: -20px;
+    border: 2px solid transparent;
+    border-top: 2px solid #8a2be2;
+    border-radius: 50%;
+    animation: loaderSpin 1s linear infinite;
+}
+
+/* Keyframe animations */
+@keyframes godSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(50px) rotateX(20deg);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) rotateX(0);
+    }
+}
+
+@keyframes godTitleReveal {
+    from {
+        opacity: 0;
+        transform: translateY(50px) scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes godSubtitleReveal {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes godButtonsReveal {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes titleUnderline {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes loaderSpin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes rippleExpand {
+    from {
+        transform: scale(0);
+        opacity: 1;
+    }
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+@keyframes screenShake {
+    0%, 100% { transform: translateX(0); }
+    10% { transform: translateX(-5px); }
+    20% { transform: translateX(5px); }
+    30% { transform: translateX(-3px); }
+    40% { transform: translateX(3px); }
+    50% { transform: translateX(-2px); }
+    60% { transform: translateX(2px); }
+    70% { transform: translateX(-1px); }
+    80% { transform: translateX(1px); }
+    90% { transform: translateX(-0.5px); }
+}
+
+@keyframes colorWaveMove {
+    from {
+        left: -100%;
+    }
+    to {
+        left: 100%;
+    }
+}
+
+@keyframes matrixFall {
+    from {
+        top: -20px;
+        opacity: 1;
+    }
+    to {
+        top: 100vh;
+        opacity: 0;
+    }
+}
+
+@keyframes godPulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 20px rgba(138, 43, 226, 0.4);
+    }
+    50% {
+        transform: scale(1.1);
+        box-shadow: 0 0 40px rgba(138, 43, 226, 0.8);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 20px rgba(138, 43, 226, 0.4);
+    }
+}
+
+@keyframes buttonGradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes watchButtonPulse {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 8px 25px rgba(255, 0, 128, 0.3);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 12px 35px rgba(255, 0, 128, 0.6);
+    }
+}
+
+@keyframes buttonExplode {
+    0% { transform: translateY(-5px) scale(1.05); }
+    25% { transform: translateY(-8px) scale(1.1) rotate(2deg); }
+    50% { transform: translateY(-10px) scale(1.15) rotate(-1deg); }
+    75% { transform: translateY(-8px) scale(1.1) rotate(1deg); }
+    100% { transform: translateY(-5px) scale(1.05) rotate(0deg); }
+}
+
+@keyframes watchButtonExplode {
+    0% { transform: translateY(-8px) scale(1.1); }
+    25% { transform: translateY(-12px) scale(1.2) rotate(3deg); }
+    50% { transform: translateY(-15px) scale(1.25) rotate(-2deg); }
+    75% { transform: translateY(-12px) scale(1.2) rotate(2deg); }
+    100% { transform: translateY(-8px) scale(1.1) rotate(0deg); }
+}
+
+/* Floating particles animation */
+@keyframes particleFloat {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+        opacity: 0.7;
+    }
+    50% {
+        transform: translateY(-20px) rotate(180deg);
+        opacity: 1;
+    }
+}
+
+/* Glitch effect */
+.glitch {
+    animation: glitch 0.3s ease-in-out;
+}
+
+@keyframes glitch {
+    0% { transform: translate(0); }
+    20% { transform: translate(-2px, 2px); }
+    40% { transform: translate(-2px, -2px); }
+    60% { transform: translate(2px, 2px); }
+    80% { transform: translate(2px, -2px); }
+    100% { transform: translate(0); }
+}
+
+/* Neon glow effect */
+.neon-glow {
+    animation: neonGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes neonGlow {
+    from {
+        text-shadow: 
+            0 0 5px #8a2be2,
+            0 0 10px #8a2be2,
+            0 0 15px #8a2be2,
+            0 0 20px #8a2be2;
+    }
+    to {
+        text-shadow: 
+            0 0 10px #8a2be2,
+            0 0 20px #8a2be2,
+            0 0 30px #8a2be2,
+            0 0 40px #8a2be2;
+    }
+}
+
+/* Hologram effect */
+.hologram {
+    position: relative;
+    background: linear-gradient(45deg, transparent 30%, rgba(138, 43, 226, 0.1) 50%, transparent 70%);
+    background-size: 20px 20px;
+    animation: hologramScan 3s linear infinite;
+}
+
+@keyframes hologramScan {
+    0% { background-position: 0 0; }
+    100% { background-position: 20px 20px; }
+}
+
+/* Responsive animations */
+@media (max-width: 768px) {
+    .movie-card:hover {
+        transform: translateY(-5px);
+    }
+    
+    .godSlideIn {
+        animation-duration: 0.6s;
+    }
+}

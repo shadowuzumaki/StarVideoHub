@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 StarVideoHub - Premium Movie Experience | Watch Latest Movies Online</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Experience cinema like never before with StarVideoHub. Watch latest movies, anime, and upcoming releases with stunning visuals and premium quality streaming.">
+    <meta name="keywords" content="movies, streaming, cinema, watch online, latest movies, anime, premium movies, StarVideoHub">
+    <meta name="author" content="StarVideoHub">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://your-domain.com/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://your-domain.com/">
+    <meta property="og:title" content="StarVideoHub - Premium Movie Experience">
+    <meta property="og:description" content="Experience cinema like never before with our premium movie streaming platform">
+    <meta property="og:image" content="https://your-domain.com/images/og-image.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://your-domain.com/">
+    <meta property="twitter:title" content="StarVideoHub - Premium Movie Experience">
+    <meta property="twitter:description" content="Experience cinema like never before with our premium movie streaming platform">
+    <meta property="twitter:image" content="https://your-domain.com/images/og-image.jpg">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#ffd700">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="StarVideoHub">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="fallback-poster.svg">
+    <link rel="apple-touch-icon" href="fallback-poster.svg">
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="preload" href="god-animations.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;500&display=swap" as="style">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="god-animations.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- External Scripts -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "StarVideoHub",
+        "description": "Premium movie streaming platform with latest movies and anime",
+        "url": "https://your-domain.com",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://your-domain.com/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+</head>
+<body>
+    <div class="loading-screen">
+        <div class="cosmic-loader">
+            <div class="loader-ring"></div>
+            <div class="loader-ring"></div>
+            <div class="loader-ring"></div>
+            <div class="loader-core">🎬</div>
+        </div>
+        <h2 class="loading-text">Loading StarVideoHub...</h2>
+        <div class="loading-particles"></div>
+    </div>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo" onclick="window.location.href='#movies'">
+                <span class="logo-icon">🎬</span>
+                <h1>StarVideoHub</h1>
+                <div class="logo-glow"></div>
+                <div class="logo-particles"></div>
+            </div>
+            <div class="nav-center">
+                <div class="nav-links">
+                    <a href="#movies" class="nav-link active">
+                        <span>Movies</span>
+                        <div class="nav-glow"></div>
+                    </a>
+                    <a href="#anime" class="nav-link">
+                        <span>Anime</span>
+                        <div class="nav-glow"></div>
+                    </a>
+                    <a href="#coming-soon" class="nav-link">
+                        <span>Coming Soon</span>
+                        <div class="nav-glow"></div>
+                    </a>
+                    <a href="#trending" class="nav-link">
+                        <span>Trending</span>
+                        <div class="nav-glow"></div>
+                    </a>
+                </div>
+            </div>
+            <div class="nav-actions">
+                <div class="search-container">
+                    <button class="search-btn" id="searchBtn">
+                        <span class="search-icon">🔍</span>
+                        <div class="search-glow"></div>
+                        <div class="search-particles"></div>
+                    </button>
+                    <div class="search-modal" id="searchModal">
+                        <div class="search-box">
+                            <input type="text" placeholder="Search movies..." id="searchInput" class="search-input">
+                            <div class="search-results" id="searchResults"></div>
+                        </div>
+                    </div>
+                </div>
+                <button class="login-btn" id="loginBtn">
+                    <span>Login</span>
+                    <div class="btn-glow"></div>
+                    <div class="btn-particles"></div>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <section id="movies" class="movies-section" style="padding-top: 120px;">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-text">✨ Featured Movies ✨</span>
+                <div class="title-glow"></div>
+                <div class="title-particles"></div>
+            </h2>
+            
+
+
+            <div class="movies-grid" id="moviesGrid">
+                <!-- Movies will be populated by JavaScript -->
+            </div>
+            
+            <div class="pagination-section">
+                <button class="next-page-btn rainbow-btn" id="nextPageBtn">
+                    <span class="btn-text">Next Page</span>
+                    <span class="btn-icon">⚡</span>
+                    <div class="btn-glow"></div>
+                    <div class="btn-particles"></div>
+                    <div class="rainbow-border"></div>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section id="anime" class="anime-section">
+        <div class="container">
+            <h2 class="section-title anime-title">
+                <span class="title-text">🌸 Anime Collection 🌸</span>
+                <div class="title-glow anime-glow"></div>
+                <div class="sakura-particles"></div>
+            </h2>
+            <div class="anime-grid" id="animeGrid">
+                <!-- Anime will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <section id="coming-soon" class="coming-soon-section">
+        <div class="container">
+            <h2 class="section-title coming-soon-title">
+                <span class="title-text">🚀 Coming Soon 🚀</span>
+                <div class="title-glow rocket-glow"></div>
+                <div class="rocket-particles"></div>
+            </h2>
+            <div class="coming-soon-grid" id="comingSoonGrid">
+                <!-- Coming soon movies will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <section id="trending" class="trending-section">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-text">🔥 Trending Now 🔥</span>
+                <div class="title-glow fire-glow"></div>
+                <div class="fire-particles"></div>
+            </h2>
+            <div class="trending-carousel">
+                <div class="carousel-track" id="trendingTrack">
+                    <!-- Trending movies will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cool Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="footer-icon">🎬</span>
+                    <h2>StarVideoHub</h2>
+                    <div class="footer-glow"></div>
+                </div>
+                <div class="footer-text">
+                    <p>Experience cinema like never before</p>
+                    <p>Premium streaming • Unlimited entertainment • God-level experience</p>
+                </div>
+                <div class="footer-social">
+                    <span class="social-icon">🌟</span>
+                    <span class="social-icon">⚡</span>
+                    <span class="social-icon">🎮</span>
+                    <span class="social-icon">🔥</span>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 StarVideoHub. Built with ❤️ for movie lovers.</p>
+            </div>
+        </div>
+        <div class="footer-particles"></div>
+    </footer>
+
+    <div class="movie-modal" id="movieModal">
+        <div class="modal-backdrop"></div>
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-glow"></div>
+            <div class="modal-body">
+                <img class="modal-poster" id="modalPoster" src="" alt="">
+                <div class="modal-info">
+                    <h2 id="modalTitle"></h2>
+                    <p id="modalGenre"></p>
+                    <p id="modalYear"></p>
+                    <p id="modalRating"></p>
+                    <p id="modalDescription"></p>
+                    <div class="modal-buttons">
+                        <button class="btn-primary rainbow-btn" id="watchNowBtn">
+                            <span>▶ Watch Now</span>
+                            <div class="btn-glow"></div>
+                            <div class="btn-particles"></div>
+                            <div class="rainbow-border"></div>
+                        </button>
+                        <button class="btn-secondary">
+                            <span>Add to Watchlist</span>
+                            <div class="btn-glow"></div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Perfect Login/Register Modal with God-Level Effects -->
+    <div class="auth-modal" id="authModal">
+        <div class="auth-backdrop"></div>
+        <div class="auth-container">
+            <div class="auth-glow"></div>
+            <div class="auth-particles"></div>
+            <span class="close-auth">&times;</span>
+            
+            <div class="auth-header">
+                <div class="auth-logo">🎬</div>
+                <h1 class="auth-brand">StarVideoHub</h1>
+                <div class="brand-glow"></div>
+            </div>
+            
+            <div class="auth-tabs">
+                <button class="auth-tab active" data-tab="login">
+                    <span>Login</span>
+                    <div class="tab-glow"></div>
+                </button>
+                <button class="auth-tab" data-tab="register">
+                    <span>Register</span>
+                    <div class="tab-glow"></div>
+                </button>
+            </div>
+            
+            <div class="auth-form" id="loginForm">
+                <h2 class="form-title">Welcome Back</h2>
+                <p class="form-subtitle">Sign in to continue your journey</p>
+                
+                <div class="social-login">
+                    <button class="social-btn google-btn rainbow-btn" id="googleLogin">
+                        <div class="btn-glow"></div>
+                        <span class="social-icon">🌟</span>
+                        <span>Continue with Google</span>
+                        <div class="btn-particles"></div>
+                        <div class="rainbow-border"></div>
+                    </button>
+                    <button class="social-btn github-btn rainbow-btn" id="githubLogin">
+                        <div class="btn-glow"></div>
+                        <span class="social-icon">⚡</span>
+                        <span>Continue with GitHub</span>
+                        <div class="btn-particles"></div>
+                        <div class="rainbow-border"></div>
+                    </button>
+                    <button class="social-btn discord-btn rainbow-btn" id="discordLogin">
+                        <div class="btn-glow"></div>
+                        <span class="social-icon">🎮</span>
+                        <span>Continue with Discord</span>
+                        <div class="btn-particles"></div>
+                        <div class="rainbow-border"></div>
+                    </button>
+                </div>
+                
+                <div class="divider">
+                    <div class="divider-line"></div>
+                    <span class="divider-text">or</span>
+                    <div class="divider-line"></div>
+                </div>
+                
+                <div class="input-group">
+                    <div class="input-container">
+                        <input type="email" placeholder="Email" id="loginEmail" class="auth-input">
+                        <div class="input-glow"></div>
+                        <span class="input-icon">📧</span>
+                    </div>
+                    <div class="input-container">
+                        <input type="password" placeholder="Password" id="loginPassword" class="auth-input">
+                        <div class="input-glow"></div>
+                        <span class="input-icon">🔒</span>
+                        <button type="button" class="toggle-password" id="toggleLoginPassword">👁️</button>
+                    </div>
+                </div>
+                
+                <div class="auth-options">
+                    <label class="remember-me">
+                        <input type="checkbox" id="rememberMe">
+                        <span class="checkmark"></span>
+                        Remember me
+                    </label>
+                    <a href="#" class="forgot-password">Forgot Password?</a>
+                </div>
+                
+                <button class="auth-btn primary-btn rainbow-btn" id="loginSubmit">
+                    <span class="btn-text">Login</span>
+                    <div class="btn-glow"></div>
+                    <div class="btn-particles"></div>
+                    <div class="rainbow-border"></div>
+                </button>
+            </div>
+            
+            <div class="auth-form hidden" id="registerForm">
+                <h2 class="form-title">Join StarVideoHub</h2>
+                <p class="form-subtitle">Create your account and start watching</p>
+                
+                <div class="social-login">
+                    <button class="social-btn google-btn rainbow-btn" id="googleRegister">
+                        <div class="btn-glow"></div>
+                        <span class="social-icon">🌟</span>
+                        <span>Sign up with Google</span>
+                        <div class="btn-particles"></div>
+                        <div class="rainbow-border"></div>
+                    </button>
+                    <button class="social-btn github-btn rainbow-btn" id="githubRegister">
+                        <div class="btn-glow"></div>
+                        <span class="social-icon">⚡</span>
+                        <span>Sign up with GitHub</span>
+                        <div class="btn-particles"></div>
+                        <div class="rainbow-border"></div>
+                    </button>
+                    <button class="social-btn discord-btn rainbow-btn" id="discordRegister">
+                        <div class="btn-glow"></div>
+                        <span class="social-icon">🎮</span>
+                        <span>Sign up with Discord</span>
+                        <div class="btn-particles"></div>
+                        <div class="rainbow-border"></div>
+                    </button>
+                </div>
+                
+                <div class="divider">
+                    <div class="divider-line"></div>
+                    <span class="divider-text">or</span>
+                    <div class="divider-line"></div>
+                </div>
+                
+                <div class="input-group">
+                    <div class="input-container">
+                        <input type="text" placeholder="Username" id="registerUsername" class="auth-input">
+                        <div class="input-glow"></div>
+                        <span class="input-icon">👤</span>
+                    </div>
+                    <div class="input-container">
+                        <input type="email" placeholder="Email" id="registerEmail" class="auth-input">
+                        <div class="input-glow"></div>
+                        <span class="input-icon">📧</span>
+                    </div>
+                    <div class="input-container">
+                        <input type="password" placeholder="Password" id="registerPassword" class="auth-input">
+                        <div class="input-glow"></div>
+                        <span class="input-icon">🔒</span>
+                        <button type="button" class="toggle-password" id="toggleRegisterPassword">👁️</button>
+                    </div>
+                    <div class="input-container">
+                        <input type="password" placeholder="Confirm Password" id="confirmPassword" class="auth-input">
+                        <div class="input-glow"></div>
+                        <span class="input-icon">🔐</span>
+                    </div>
+                </div>
+                
+                <div class="auth-options">
+                    <label class="terms-check">
+                        <input type="checkbox" id="agreeTerms">
+                        <span class="checkmark"></span>
+                        I agree to the <a href="#">Terms & Conditions</a>
+                    </label>
+                </div>
+                
+                <button class="auth-btn primary-btn rainbow-btn" id="registerSubmit">
+                    <span class="btn-text">Create Account</span>
+                    <div class="btn-glow"></div>
+                    <div class="btn-particles"></div>
+                    <div class="rainbow-border"></div>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Profile Modal -->
+    <div class="profile-modal" id="profileModal">
+        <div class="profile-container">
+            <span class="close-profile">&times;</span>
+            <div class="profile-glow"></div>
+            <div class="profile-header">
+                <div class="profile-avatar" id="profileAvatar">👤</div>
+                <div class="profile-info">
+                    <h2 id="profileName">User Name</h2>
+                    <p id="profileEmail">user@email.com</p>
+
+                </div>
+            </div>
+            <div class="profile-stats">
+                <div class="stat-item">
+                    <span class="stat-number">24</span>
+                    <span class="stat-label">Movies Watched</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">156</span>
+                    <span class="stat-label">Hours Watched</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">8.5</span>
+                    <span class="stat-label">Avg Rating</span>
+                </div>
+            </div>
+            <button class="logout-btn rainbow-btn" id="logoutBtn">
+                <span>Logout</span>
+                <div class="btn-glow"></div>
+                <div class="btn-particles"></div>
+                <div class="rainbow-border"></div>
+            </button>
+        </div>
+    </div>
+
+    <div class="video-player" id="videoPlayer">
+        <div class="player-container">
+            <span class="close-player">&times;</span>
+            <div class="player-glow"></div>
+            <div class="player-title" id="playerTitle">Movie Title</div>
+            <video id="mainVideo" preload="metadata">
+                <source src="" type="video/mp4">
+                <source src="" type="video/webm">
+                Your browser does not support the video tag.
+            </video>
+            <div class="player-controls">
+                <div class="progress-container">
+                    <div class="progress-bar" id="progressBar">
+                        <div class="progress-fill" id="progressFill"></div>
+                        <div class="progress-thumb" id="progressThumb"></div>
+                    </div>
+                </div>
+                <div class="controls-row">
+                    <button class="control-btn" id="playPauseBtn">▶</button>
+                    <span class="time-display" id="timeDisplay">00:00 / 00:00</span>
+                    <div class="volume-container">
+                        <button class="control-btn" id="volumeBtn">🔊</button>
+                        <input type="range" class="volume-slider" id="volumeSlider" min="0" max="100" value="50">
+                    </div>
+                    <button class="control-btn" id="fullscreenBtn">⛶</button>
+                </div>
+            </div>
+            <div class="player-overlay" id="playerOverlay">
+                <div class="play-icon">▶</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Particles Background -->
+    <div class="floating-particles"></div>
+    <div class="cosmic-background"></div>
+
+    <script src="enhanced-fix.js"></script>
+    <script src="god-animations.js"></script>
+    <script src="auth-system.js"></script>
+    <script src="search-system.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
